@@ -18,7 +18,7 @@ const Counter = () => {
             <div className='count'>
                 <span>{count}</span>
             </div>
-            <div class="buttons">
+            <div className="buttons">
                 <Button onClick={() => {
                     incrementHandler(count, setCount)
                 }}>INCREMENT</Button>

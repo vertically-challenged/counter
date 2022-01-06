@@ -3,7 +3,7 @@
 .counter {
     display: flex;
     margin: 0 auto;
-    margin-right: 35vw;
+    margin-right: calc(50vw - 205px);
     margin-top: 20vh;
     font-size: 120px;
     color: white; 
