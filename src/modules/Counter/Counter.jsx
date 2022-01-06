@@ -1,32 +1,33 @@
-import React, { useState } from 'react'
-import {connect} from 'react-redux'
-import {increment} from '../../redux/actions';
+import React, {useState} from 'react'
 import Button from '../common/Button/Button'
-import './Counter.scss'
+import  './Counter.scss'
 
+const incrementHandler = (count, setCount) => {
+    setCount(count + 1)
+}
 
-const Counter = ({count}) => {
+const decrementHandler = (count, setCount) => {
+    setCount(count - 1)
+}
+
+const Counter = () => {
+    const [count, setCount] = useState(0)
 
     return (
-        <div>
-            <div className='counter'>{count}</div>
-            <div className='buttons'>
-                <Button onClick={incOnClickHandler}>Increment</Button>
-                <Button>Decrement</Button>
-                <Button>Async Increment</Button>
+        <article className='counter'>
+            <div className='count'>
+                <span>{count}</span>
             </div>
-        </div>
+            <div class="buttons">
+                <Button onClick={() => {
+                    incrementHandler(count, setCount)
+                }}>INCREMENT</Button>
+                <Button onClick={() => {
+                    decrementHandler(count, setCount)
+                }}>DECREMENT</Button>
+            </div>
+        </article>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        count: state.count.count
-    }
-}
-
-const mapDispatchToProps = {
-    increment
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter

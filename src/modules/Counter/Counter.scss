@@ -1,4 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 .counter {
-    font-size: 5rem;
-    text-align: left;
+    display: flex;
+    margin: 0 auto;
+    margin-right: 35vw;
+    margin-top: 20vh;
+    font-size: 120px;
+    color: white; 
+}
+
+.count {
+    font-family: 'Space Mono', monospace;
+    padding: 40px;
+    border-right: solid 5px white;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
 }

@@ -1,17 +1,14 @@
 import React from 'react'
 import './Button.scss'
 
-const Button = ({children, onClick}) => {
+const Button = (props) => {
     return (
-        <button 
-            className='button'
-            onClick={onClick}
+        <button
+        onClick={props.onClick}
         >
-            {children}
+            {props.children}
         </button>
     )
 }
 
 export default Button
-
-
