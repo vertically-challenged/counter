@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
 import Button from '../common/Button/Button'
+import { useDispatch, useSelector } from 'react-redux'
 import  './Counter.scss'
 
-const incrementHandler = (count, setCount) => {
-    setCount(count + 1)
+const incrementHandler = (dispatch) => {
+    dispatch({type: 'INCREMENT'})
 }
 
-const decrementHandler = (count, setCount) => {
-    setCount(count - 1)
+const decrementHandler = (dispatch) => {
+    dispatch({type: 'DECREMENT'})
 }
 
 const Counter = () => {
-    const [count, setCount] = useState(0)
+    const dispatch = useDispatch()
+    const count = useSelector(state => state)
 
     return (
         <article className='counter'>
@@ -20,10 +22,10 @@ const Counter = () => {
             </div>
             <div className="buttons">
                 <Button onClick={() => {
-                    incrementHandler(count, setCount)
+                    incrementHandler(dispatch)
                 }}>INCREMENT</Button>
                 <Button onClick={() => {
-                    decrementHandler(count, setCount)
+                    decrementHandler(dispatch)
                 }}>DECREMENT</Button>
             </div>
         </article>
