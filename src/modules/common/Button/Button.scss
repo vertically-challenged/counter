@@ -3,13 +3,24 @@ button {
     font-weight: bolder;
     margin: 5px;
     border: solid 2px white;
-    background: #444;
+    background: none;
     color: white;
     outline: none;
     cursor: pointer;
 
-    &:hover, &:focus{
+    &:hover{
+        border: solid 2px black; 
+        color: black;
+        background-color: red;
+    }
+}
+
+.LIGHT {
+    button {
         border: solid 2px #000; 
         color: #000;
+        &:hover{
+            background-color: yellow;
+        }
     }
 }

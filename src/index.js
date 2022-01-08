@@ -1,15 +1,17 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './redux/rootReducer'
 import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk'
 
 
 const createApp = () => {
-    const store = createStore(rootReducer, 0)
+    const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
     return (
         <Provider store={store}>
             <App/>

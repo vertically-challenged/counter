@@ -1,11 +1,11 @@
-const rootReducer = (state = 0, action) => {
-    if (action.type === 'INCREMENT') {
-        return state + 1
-    } else if (action.type === 'DECREMENT') {
-        return state - 1
-    }
+import { combineReducers } from 'redux'
 
-    return state
-}
+import countReducer from './countReducer'
+import themeReducer from './themeReducer'
+
+const rootReducer = combineReducers({
+    count: countReducer, 
+    theme: themeReducer
+})
 
 export default rootReducer
