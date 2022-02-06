@@ -1,14 +1,26 @@
-.button {
-    padding: 20px;
+button {
+    font-size: 1rem;
+    font-weight: bolder;
     margin: 5px;
-    font-size: 2rem;
-    border: solid 4px white;
+    border: solid 2px white;
+    background: none;
     color: white;
-    cursor: pointer; 
-    background: #757575;
-    
-    &:hover, &:focus{
-        outline: none;
-        background: #999;
+    outline: none;
+    cursor: pointer;
+
+    &:hover{
+        border: solid 2px black; 
+        color: black;
+        background-color: red;
+    }
+}
+
+.LIGHT {
+    button {
+        border: solid 2px #000; 
+        color: #000;
+        &:hover{
+            background-color: yellow;
+        }
     }
 }
